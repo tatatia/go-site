@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Головна сторінка</title>
+</head>
+<body>
+<h1>Головна сторінка</h1>
+{{ if gt .Age 20 }}
+<span>Привіт</span>
+{{ else }}
+<span>Хто ви?</span>
+{{ end }}
+
+<ul>
+    {{ range .Hobbies }}
+    <li><b>{{ . }}</b></li>
+    {{ else }}
+    <li><b> не має записів </b></li>
+    {{ end }}
+</ul>
+<p>Користувач: {{.Name}}</p>
+<p>Вік: {{.Age}}</p>
+<p>Прибуток: {{.Money}}</p>
+</body>
+</html>
