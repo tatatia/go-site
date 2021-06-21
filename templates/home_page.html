@@ -6,24 +6,47 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Головна сторінка</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css">
 </head>
-<body>
-<h1>Головна сторінка</h1>
-{{ if gt .Age 20 }}
-<span>Привіт</span>
-{{ else }}
-<span>Хто ви?</span>
-{{ end }}
+<body class="d-flex h-100 text-center text-white bg-dark">
 
-<ul>
-    {{ range .Hobbies }}
-    <li><b>{{ . }}</b></li>
-    {{ else }}
-    <li><b> не має записів </b></li>
-    {{ end }}
-</ul>
-<p>Користувач: {{.Name}}</p>
-<p>Вік: {{.Age}}</p>
-<p>Прибуток: {{.Money}}</p>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+        <div>
+            <h3 class="float-md-start mb-0">itProger</h3>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link active" aria-current="page" href="/">Головна</a>
+                <a class="nav-link" href="/contacts/">Контакти</a>
+                <a class="nav-link" href="#">Про нас</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="px-3">
+        <h1>Головна сторінка</h1>
+        <p class="lead">Користувач: {{.Name}}<br>Вік: {{.Age}}<br>Прибуток: {{.Money}}</p>
+        {{ if gt .Age 20 }}
+        <p class="lead">Привіт</p>
+        {{ else }}
+        <p class="lead">Хто ви?</p>
+        {{ end }}
+        {{ range .Hobbies }}
+        <p class="lead"><b>{{ . }}</b></p>
+            {{ else }}
+            <p class="lead"><b> не має записів </b></p>
+        {{ end }}
+
+
+        <p class="lead">
+            <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Знати більше</a>
+        </p>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+        <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+                href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    </footer>
+</div>
 </body>
 </html>
